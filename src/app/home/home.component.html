@@ -1,0 +1,20 @@
+<div class="relative">
+    <section>
+        <form>
+            <div class="container flex flex-row space-x-4 max-w-full">
+                <div class="flex flex-row w-full">
+                    <input type="text" placeholder="Filter by City" #filter>
+                    <button class="primary w-24" type="button" (click)="filterResults(filter.value)">Search</button>
+                </div>
+                <button class="justify-start w-24" routerLink="charts">Charts</button>
+            </div>
+        </form>
+    </section>
+    <section class="results">
+        <app-housing-location *ngFor="let housingLocation of filteredLocationList"
+                              [housingLocation]="housingLocation"></app-housing-location>
+    </section>
+    <app-curved-div></app-curved-div>
+</div>
+
+
